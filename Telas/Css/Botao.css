@@ -1,0 +1,33 @@
+/* Estilo para os botões */
+.btn-success {
+    background-color: #28a745;
+    /* Cor de fundo verde para o botão de início */
+    color: #fff;
+    /* Cor do texto branco */
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    /* Cor de fundo vermelha para o botão de pausa */
+    color: #fff;
+    /* Cor do texto branco */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    /* Cor de fundo azul para o botão de reset */
+    color: #fff;
+    /* Cor do texto branco */
+}
+
+/* Estilo para os ícones dentro dos botões */
+.btn i {
+    font-size: 24px;
+    /* Tamanho do ícone */
+}
+
+/* Estilo para os botões quando o cursor está sobre eles */
+.btn:hover {
+    opacity: 0.8;
+    /* Reduz a opacidade quando o cursor está sobre o botão */
+}

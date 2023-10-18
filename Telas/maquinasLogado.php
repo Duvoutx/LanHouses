@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-br" data-bs-theme="auto">
+
+<head>
+    <?php
+    session_start(); //Inicia uma nova sessão ou resume uma sessão existente
+    if ((!isset($_SESSION['Nome']) == true) and (!isset($_SESSION['senha']) == true)) {
+        session_unset(); //remove todas as variáveis de sessão
+        echo "<script>
+                    alert('Esta página só pode ser acessada por usuário logado');
+                    window.location.href = 'exemplo.html';
+                    </script>";
+    }
+    $logado = $_SESSION['Nome'];
+    ?>
+    <script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.115.4">
+    <title>Bem vindo ao Lan House's</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="pricing.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check" viewBox="0 0 16 16">
+            <title>Check</title>
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+    </svg>
+
+    <div class="container py-3">
+        <header>
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+                <a href="indexLogado.php" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+                    <span class="fs-4">Lan House's</span>
+                </a>
+
+                <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+
+                    <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="indexLogado.php">Preços</a>
+                    <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contactLogado.php">Contato</a>
+                    <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="Gerencia.php">Gerenciar</a>
+                    <a class="py-2 link-body-emphasis text-decoration-none" href="logout.php">Sair</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="py-5 text-center container">
+
+                <div class="row py-lg-5">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <h1 class="fw-light">Nossas Máquinas</h1>
+                        <p class="lead text-body-secondary">Nesta pagina te mostraremos todo nosso arsenal de maquinas, preparado?
+                        </p>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="img/Xbox.jpg" height="285">
+                        <div class="card-body">
+                            <p class="card-text">-Processador x86-64 AMD APU "Jaguar" Octa-Core 1,75 até 2,86 GHz -
+                                8GB de memória RAM DDR3 - e 32MB da ESRAM -
+                                GPU AMD Radeon GCN 768 cores 853 MHz 1,31 TFLOPS -
+                                Joystick padrão do Xbox One -
+                                HD de 500GB -
+                                Mídia física em Blu-Ray e DVD jogos do Xbox 360 e filmes -
+                                7.1 surround sound;[27] Dolby Atmos[28] -
+                                Suporte a atualização variável a 120 Hz.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="img/playstation-5.jpg" width="100%">
+                        <div class="card-body">
+                            <p class="card-text">- Processador: AMD Ryzen™ “Zen 2” -
+                                Placa de vídeo: AMD com arquitetura Radeon RDNA 2
+                                - Resolução: 4K até 120Hz, podendo chegar a 8K
+                                - Armazenamento: SSD de 825GB
+                                - Mídia: física e digital
+                                - Memória RAM: 16GB
+                                - Controles: DualSense
+                                - Serviço online: PlayStation Store / PlayStation Plus
+                                - Retrocompatibilidade: PS1, PS2, PS3 e PS4.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="img/PC.jpg" height="275">
+                        <div class="card-body">
+                            <p class="card-text">- Processador Intel i7-4790 de 4ª Geração com 3.60 GHz e 4 núcleos -
+                                - Placa mãe B85 com Socket 1150 e suporte para Core i3/i5/i7 de 4º Geração e 2 slots para memórias DDR3
+                                com suporte até
+                                16GB Dual -
+                                Placa de vídeo rx 580 8GB GDDR5 com 256bit
+                                - Rede lan de 10/100/1000
+                                - 16GB de Memória ram DDR3
+                                - ssd sata de 960GB
+                                - Fonte 600W bivolt.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </div>
+
+    </main>
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <Style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-image: url(img/nuvens.jpg);
+        }
+    </Style>
+
+</body>
+
+</html>
